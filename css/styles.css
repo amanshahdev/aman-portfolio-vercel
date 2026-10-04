@@ -249,7 +249,7 @@ button{ font-family:inherit; background:none; border:0; color:inherit; cursor:po
   font-size:clamp(2.2rem,5.2vw,4.4rem); line-height:1; margin-bottom:20px;
   color:var(--bone);
 }
-.project--02 .project__title{ color:var(--cobalt); -webkit-text-stroke:1.5px var(--bone); }
+.project--02 .project__title{ color:#fff; }
 .project--04 .project__title{ color:var(--orange); }
 .project--06 .project__title{ color:var(--lime); }
 .project__desc{
