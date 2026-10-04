@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/svg+xml" href="public/favicon.svg" />
+<title>Aman Shah — Portfolio</title>
+<meta name="description" content="Aman Shah's portfolio of digital products, intelligent tools, and thoughtful interfaces." />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- GSAP (CDN — loaded from the visitor's own connection, no build step required) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<link rel="stylesheet" href="css/styles.css" />
+<noscript><style>.preloader,.cursor{display:none!important;}</style></noscript>
+</head>
+<body>
+
+<!-- ===================== PRELOADER ===================== -->
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="preloader__word">
+    <span>A</span><span>M</span><span>A</span><span>N</span>
+  </div>
+  <div class="preloader__bar"><span></span></div>
+</div>
+
+<!-- ===================== CUSTOM CURSOR ===================== -->
+<div class="cursor" id="cursor" aria-hidden="true">
+  <span class="cursor__label"></span>
+</div>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ===================== NAV ===================== -->
+<header class="nav" data-nav>
+  <a href="#top" class="nav__mark" aria-label="Aman Shah — home">A·S</a>
+
+  <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">
+    <span>Menu</span>
+    <span class="nav__toggle-icon" aria-hidden="true"><i></i><i></i></span>
+  </button>
+
+  <nav class="nav__menu" id="navMenu">
+    <a href="#top" class="nav__menu-back" aria-label="Back to top">←</a>
+    <ol>
+      <li><a href="#work" data-cursor="View">01 — Work</a></li>
+      <li><a href="#about" data-cursor="Read">02 — About</a></li>
+      <li><a href="#skills" data-cursor="Learn">03 — Tools I work with everyday</a></li>
+      <li><a href="#contact" data-cursor="Say hi">04 — Contact</a></li>
+    </ol>
+  </nav>
+
+  <div class="nav__progress" aria-hidden="true"><span id="navProgressBar"></span></div>
+</header>
+
+<main id="main">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="top">
+    <div class="hero__grain" aria-hidden="true"></div>
+
+    <h1 class="hero__title" id="heroTitle" aria-label="Aman Shah">
+      <span class="hero__line hero__line--1" data-line>
+        <span class="letter">A</span><span class="letter">M</span><span class="letter">A</span><span class="letter">N</span>
+      </span>
+      <span class="hero__line hero__line--2" data-line>
+        <span class="letter">S</span><span class="letter">H</span><span class="letter">A</span><span class="letter">H</span>
+      </span>
+    </h1>
+
+    <div class="hero__meta">
+      <a href="#work" class="hero__scroll" data-cursor="Scroll">
+        <span>Scroll</span>
+        <svg width="10" height="34" viewBox="0 0 10 34" fill="none"><path d="M5 0V32M5 32L1 27M5 32L9 27" stroke="currentColor" stroke-width="1.4"/></svg>
+      </a>
+      <a href="/resume/Aman_Shah_Resume.pdf" class="hero__resume" target="_blank" rel="noopener" data-cursor="Resume">View resume ↗</a>
+    </div>
+
+  </section>
+
+  <!-- ===================== INTRO STRIP ===================== -->
+  <section class="intro">
+    <p class="intro__text">
+      <span class="intro__line intro__line--white">I build things, break things,</span>
+      <span class="intro__line intro__line--accent">and occasionally make them work.</span>
+    </p>
+  </section>
+
+  <!-- ===================== WORK ===================== -->
+  <section class="work" id="work">
+    <div class="work__head">
+      <h2 class="section-title">My&nbsp;Work</h2>
+      <p class="work__counter"><span id="workCurrent">01</span> / <span id="workTotal">08</span></p>
+    </div>
+
+    <!-- PROJECT 01 -->
+    <article class="project project--01" data-project>
+      <div class="project__art" aria-hidden="true">
+        <svg viewBox="0 0 800 800" class="art-svg art-svg--scribble">
+          <rect width="800" height="800" fill="#0A0A0B"/>
+          <g stroke="#FF4E1F" stroke-width="3" fill="none" opacity="0.9">
+            <path d="M40 620 C 180 420, 260 760, 400 520 S 620 260, 760 460" />
+            <path d="M60 300 C 220 120, 300 480, 460 220 S 680 60, 750 200" stroke="#D8FF3E"/>
+            <path d="M100 700 C 260 640, 340 780, 520 700 S 700 620, 770 700" stroke="#F3EEE3" opacity="0.6"/>
+          </g>
+          <circle cx="620" cy="180" r="120" fill="#FF4E1F" opacity="0.9"/>
+          <circle cx="640" cy="160" r="120" fill="#0A0A0B"/>
+        </svg>
+      </div>
+      <div class="project__body">
+        <span class="project__tag">Web Platform — Marketplace — Authentication</span>
+        <h3 class="project__title">FREELANCEHUB</h3>
+        <p class="project__desc">A marketplace connecting clients and freelancers through focused project workflows, separate user roles, and a clear path from discovery to collaboration.</p>
+        <ul class="project__facts">
+          <li>React + Node.js</li>
+          <li>MongoDB + Mongoose</li>
+          <li>JWT authentication</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- PROJECT 02 -->
+    <article class="project project--02" data-project>
+      <div class="project__art" aria-hidden="true">
+        <svg viewBox="0 0 800 800" class="art-svg art-svg--grid">
+          <rect width="800" height="800" fill="#0A0A0B"/>
+          <g stroke="#2438FF" stroke-width="1">
+            <line x1="0" y1="100" x2="800" y2="100"/><line x1="0" y1="200" x2="800" y2="200"/>
+            <line x1="0" y1="300" x2="800" y2="300"/><line x1="0" y1="400" x2="800" y2="400"/>
+            <line x1="0" y1="500" x2="800" y2="500"/><line x1="0" y1="600" x2="800" y2="600"/>
+            <line x1="0" y1="700" x2="800" y2="700"/>
+            <line x1="100" y1="0" x2="100" y2="800"/><line x1="200" y1="0" x2="200" y2="800"/>
+            <line x1="300" y1="0" x2="300" y2="800"/><line x1="400" y1="0" x2="400" y2="800"/>
+            <line x1="500" y1="0" x2="500" y2="800"/><line x1="600" y1="0" x2="600" y2="800"/>
+            <line x1="700" y1="0" x2="700" y2="800"/>
+          </g>
+          <rect x="300" y="200" width="300" height="400" fill="#D8FF3E"/>
+          <rect x="340" y="240" width="220" height="80" fill="#0A0A0B"/>
+          <rect x="340" y="360" width="120" height="200" fill="#0A0A0B"/>
+        </svg>
+      </div>
+      <div class="project__body">
+        <span class="project__tag">AI Web App — Resume Analysis — Feedback</span>
+        <h3 class="project__title">RESUMEAI</h3>
+        <p class="project__desc">A resume analysis tool that gives practical feedback on structure, skills, and keyword optimization so each revision is easier to target.</p>
+        <ul class="project__facts">
+          <li>React + Node.js</li>
+          <li>MongoDB + Express.js</li>
+          <li>Multer + JWT</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- PROJECT 03 -->
+    <article class="project project--03" data-project>
+      <div class="project__art" aria-hidden="true">
+        <svg viewBox="0 0 800 800" class="art-svg art-svg--editorial">
+          <rect width="800" height="800" fill="#F3EEE3"/>
+          <g fill="#0A0A0B">
+            <rect x="60" y="80" width="680" height="6"/>
+            <rect x="60" y="720" width="680" height="6"/>
+            <rect x="60" y="80" width="6" height="646"/>
+            <rect x="734" y="80" width="6" height="646"/>
+          </g>
+          <text x="90" y="260" font-family="Georgia, serif" font-size="180" fill="#0A0A0B" opacity="0.94">Aa</text>
+          <g fill="#0A0A0B" opacity="0.85">
+            <rect x="90" y="380" width="620" height="2"/>
+            <rect x="90" y="420" width="500" height="2"/>
+            <rect x="90" y="460" width="560" height="2"/>
+            <rect x="90" y="500" width="420" height="2"/>
+          </g>
+          <circle cx="650" cy="620" r="60" fill="#FF4E1F"/>
+        </svg>
+      </div>
+      <div class="project__body">
+        <span class="project__tag">Developer Tool — Code Review — AI Feedback</span>
+        <h3 class="project__title">CODELENS&nbsp;AI</h3>
+        <p class="project__desc">A focused code review platform that analyzes snippets for best practices, performance concerns, and potential bugs.</p>
+        <ul class="project__facts">
+          <li>React + Node.js</li>
+          <li>MongoDB + Express.js</li>
+          <li>JWT authentication</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- PROJECT 04 -->
+    <article class="project project--04" data-project>
+      <div class="project__art" aria-hidden="true">
+        <svg viewBox="0 0 800 800" class="art-svg art-svg--surreal">
+          <defs>
+            <radialGradient id="g4" cx="50%" cy="40%" r="70%">
+              <stop offset="0%" stop-color="#FF4E1F"/>
+              <stop offset="55%" stop-color="#D8FF3E"/>
+              <stop offset="100%" stop-color="#0A0A0B"/>
+            </radialGradient>
+          </defs>
+          <rect width="800" height="800" fill="#0A0A0B"/>
+          <circle cx="400" cy="360" r="300" fill="url(#g4)" opacity="0.85"/>
+          <ellipse cx="400" cy="500" rx="340" ry="60" fill="#0A0A0B"/>
+          <ellipse cx="400" cy="600" rx="380" ry="40" fill="#0A0A0B"/>
+        </svg>
+      </div>
+      <div class="project__body">
+        <span class="project__tag">Productivity Dashboard — Planning — Analytics</span>
+        <h3 class="project__title">CHRONICLE</h3>
+        <p class="project__desc">A productivity dashboard combining task management, AI-generated planning, priorities, and analytics so daily progress is easier to understand.</p>
+        <ul class="project__facts">
+          <li>React + Node.js</li>
+          <li>MongoDB + Express.js</li>
+          <li>Chart.js</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- PROJECT 05 -->
+    <article class="project project--05" data-project>
+      <div class="project__art" aria-hidden="true">
+        <svg viewBox="0 0 800 800" class="art-svg art-svg--tech">
+          <rect width="800" height="800" fill="#0A0A0B"/>
+          <g stroke="#2438FF" stroke-width="2" fill="none" opacity="0.9">
+            <polygon points="400,140 620,270 620,530 400,660 180,530 180,270"/>
+            <polygon points="400,240 520,310 520,490 400,560 280,490 280,310"/>
+          </g>
+          <g fill="#FF4E1F">
+            <circle cx="400" cy="140" r="8"/><circle cx="620" cy="270" r="8"/>
+            <circle cx="620" cy="530" r="8"/><circle cx="400" cy="660" r="8"/>
+            <circle cx="180" cy="530" r="8"/><circle cx="180" cy="270" r="8"/>
+          </g>
+        </svg>
+      </div>
+      <div class="project__body">
+        <span class="project__tag">Accessibility Tool — Computer Vision — OCR</span>
+        <h3 class="project__title">VISIONAID</h3>
+        <p class="project__desc">An assistive application that converts printed or digital text into speech for visually impaired users through computer vision and optical character recognition.</p>
+        <ul class="project__facts">
+          <li>Python + Flask</li>
+          <li>OpenCV</li>
+          <li>Tesseract OCR</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- PROJECT 06 -->
+    <article class="project project--06" data-project>
+      <div class="project__art" aria-hidden="true">
+        <svg viewBox="0 0 800 800" class="art-svg art-svg--sound">
+          <rect width="800" height="800" fill="#0A0A0B"/>
+          <g fill="#D8FF3E">
+            <rect x="80" y="380" width="16" height="40"/><rect x="120" y="320" width="16" height="160"/>
+            <rect x="160" y="260" width="16" height="280"/><rect x="200" y="200" width="16" height="400"/>
+            <rect x="240" y="300" width="16" height="200"/><rect x="280" y="360" width="16" height="80"/>
+            <rect x="320" y="220" width="16" height="360"/><rect x="360" y="160" width="16" height="480"/>
+            <rect x="400" y="260" width="16" height="280"/><rect x="440" y="340" width="16" height="120"/>
+            <rect x="480" y="200" width="16" height="400"/><rect x="520" y="300" width="16" height="200"/>
+            <rect x="560" y="360" width="16" height="80"/><rect x="600" y="240" width="16" height="320"/>
+            <rect x="640" y="320" width="16" height="160"/><rect x="680" y="380" width="16" height="40"/>
+          </g>
+        </svg>
+      </div>
+      <div class="project__body">
+        <span class="project__tag">Web Interface — Energy Sharing — Responsive UI</span>
+        <h3 class="project__title">ENERGYSHARE</h3>
+        <p class="project__desc">A clear frontend experience for a peer-to-peer energy sharing platform, presenting shared energy through a straightforward and approachable interface.</p>
+        <ul class="project__facts">
+          <li>HTML + CSS</li>
+          <li>Responsive layouts</li>
+          <li>Interface design</li>
+        </ul>
+      </div>
+    </article>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section class="about" id="about">
+    <div class="about__col about__col--main">
+      <h2 class="section-title">About</h2>
+      <p class="about__lede">I build things that think and things that scale. I work across the stack, from machine learning models in Python to React front ends, Node/Express APIs, and MongoDB and SQL back ends.</p>
+      <a href="/resume/Aman_Shah_Resume.pdf" class="about__resume hero__resume" target="_blank" rel="noopener" data-cursor="Resume">View resume ↗</a>
+    </div>
+    <div class="about__visual" aria-hidden="true">
+      <div class="about__terminal">
+        <div class="about__terminal-bar">
+          <span class="about__terminal-dot about__terminal-dot--orange"></span>
+          <span class="about__terminal-dot about__terminal-dot--lime"></span>
+          <span class="about__terminal-dot about__terminal-dot--blue"></span>
+        </div>
+        <p><span class="about__terminal-prompt">aman@portfolio:~$</span> whoami</p>
+        <p class="about__terminal-output">Aman Shah</p>
+        <p><span class="about__terminal-prompt">aman@portfolio:~$</span> build something useful</p>
+        <p class="about__terminal-output about__terminal-output--accent">status: ready</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SKILLS ===================== -->
+  <section class="skills" id="skills">
+    <div class="skills__head">
+      <h2 class="section-title">Tools I work with <span class="skills__title-accent">everyday</span></h2>
+      <div class="skills__graphic" aria-hidden="true">
+        <span class="skills__graphic-orbit skills__graphic-orbit--outer"></span>
+        <span class="skills__graphic-orbit skills__graphic-orbit--inner"></span>
+        <span class="skills__graphic-node skills__graphic-node--orange"></span>
+        <span class="skills__graphic-node skills__graphic-node--lime"></span>
+        <span class="skills__graphic-code">&lt;/&gt;</span>
+      </div>
+    </div>
+    <div class="skills__grid">
+      <div class="about__block">
+        <h3>Frontend</h3>
+        <ul>
+          <li>React.js</li>
+          <li>HTML and CSS</li>
+          <li>JavaScript</li>
+          <li>Vercel</li>
+        </ul>
+      </div>
+      <div class="about__block">
+        <h3>Backend</h3>
+        <ul>
+          <li>Node.js and Express.js</li>
+          <li>FastAPI</li>
+          <li>Python and Flask</li>
+          <li>PHP and Java</li>
+          <li>MongoDB, MySQL, and PostgreSQL</li>
+          <li>Neo4j</li>
+        </ul>
+      </div>
+      <div class="about__block">
+        <h3>Tools and Deployment</h3>
+        <ul>
+          <li>Git and GitHub</li>
+          <li>Docker</li>
+          <li>Linux</li>
+          <li>Render</li>
+          <li>Alembic</li>
+          <li>Redis</li>
+          <li>Postman</li>
+          <li>MinIO</li>
+          <li>OpenCV and Tesseract OCR</li>
+        </ul>
+      </div>
+      <div class="about__block">
+        <h3>AI and Data</h3>
+        <ul>
+          <li>TensorFlow</li>
+          <li>PyTorch</li>
+          <li>MLflow</li>
+          <li>Computer vision</li>
+          <li>Machine learning</li>
+          <li>LangChain</li>
+          <li>LangGraph</li>
+          <li>Ollama</li>
+          <li>Lark</li>
+          <li>Pydantic</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section class="contact" id="contact">
+    <h2 class="contact__statement">
+      LET'S&nbsp;CREATE<br>SOMETHING<br><span>TOGETHER.</span>
+    </h2>
+    <a class="contact__email" href="mailto:amanshah.dev@gmail.com" data-cursor="Email">amanshah.dev@gmail.com</a>
+
+    <div class="contact__links">
+      <a href="https://github.com/amanshahdev" target="_blank" rel="noopener" data-cursor="Open">GitHub</a>
+      <a href="https://www.linkedin.com/in/amanshah-dev" target="_blank" rel="noopener" data-cursor="Open">LinkedIn</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="footer__row">
+    <a href="#top" data-cursor="Up">Back to top ↑</a>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
