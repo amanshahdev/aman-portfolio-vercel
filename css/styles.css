@@ -158,7 +158,7 @@ button{ font-family:inherit; background:none; border:0; color:inherit; cursor:po
   display:none;
 }
 .hero__title{
-  display:flex; flex-direction:column; gap:clamp(8px,1.2vw,20px); line-height:.86;
+  display:flex; flex-direction:column; line-height:.86;
   font-size:clamp(3.2rem,10vw,12rem); letter-spacing:-.01em;
   user-select:none;
   max-width:100%;
