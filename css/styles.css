@@ -205,7 +205,7 @@ button{ font-family:inherit; background:none; border:0; color:inherit; cursor:po
 .intro__text{
   margin:0; font-family:var(--display); font-weight:600;
   font-size:clamp(1.5rem,4.4vw,3.1rem); line-height:1.28; max-width:1180px; white-space:nowrap;
-  color:var(--bone-dim);
+  color:var(--bone-dim); overflow:hidden;
 }
 .intro__line{ display:inline; }
 .intro__line--white{ color:var(--bone); }
@@ -444,6 +444,175 @@ button{ font-family:inherit; background:none; border:0; color:inherit; cursor:po
   font-family:var(--mono); font-size:.75rem; letter-spacing:.05em; color:var(--bone-dim);
 }
 .footer__row a:hover{ color:var(--lime); }
+
+/* =========================== MOBILE LAYOUT =========================== */
+@media (max-width:760px){
+  .nav{
+    padding:18px 20px;
+  }
+  .nav__menu{
+    padding:96px 20px 36px;
+  }
+  .nav__menu a{
+    font-size:clamp(1.7rem,8.5vw,3.2rem);
+  }
+  .hero{
+    min-height:100svh;
+    padding:var(--nav-h) 20px 0;
+  }
+  .hero__title{
+    font-size:clamp(3rem,17vw,6.5rem);
+  }
+  .hero__meta{
+    align-items:flex-start;
+    margin-top:26px;
+  }
+  .intro{
+    padding:48px 20px;
+  }
+  .intro__text{
+    font-size:clamp(1.05rem,5.5vw,1.8rem);
+    line-height:1.3;
+    white-space:normal;
+  }
+  .intro__line{
+    display:inline;
+  }
+  .experience,
+  .about,
+  .skills{
+    padding:52px 20px;
+  }
+  .experience__head,
+  .work__head,
+  .skills__head{
+    align-items:flex-start;
+    flex-direction:column;
+    gap:12px;
+    margin-bottom:28px;
+  }
+  .experience__head .section-title,
+  .work__head .section-title,
+  .skills__head .section-title{
+    max-width:100%;
+    font-size:clamp(1.7rem,8vw,2.8rem);
+    letter-spacing:-.03em;
+  }
+  .experience__graphic{
+    width:170px;
+    height:112px;
+    align-self:flex-end;
+    margin-top:-18px;
+    transform:translateX(0) rotate(-8deg);
+  }
+  .experience__card{
+    grid-template-columns:1fr;
+    gap:24px;
+    padding:18px 0 0;
+  }
+  .experience__logo{
+    width:88px;
+  }
+  .experience__details h3{
+    font-size:clamp(1.4rem,7vw,2.1rem);
+  }
+  .experience__description{
+    font-size:.95rem;
+    line-height:1.6;
+  }
+  .work{
+    padding:52px 20px 24px;
+  }
+  .work__graphic{
+    width:185px;
+    height:101px;
+    align-self:flex-end;
+    margin-top:-18px;
+    transform:translateX(0) rotate(-5deg);
+  }
+  .project,
+  .project:nth-child(even){
+    grid-template-columns:1fr;
+    direction:ltr;
+    gap:28px;
+    padding:40px 0;
+  }
+  .project__art,
+  .project:nth-child(even) .project__art{
+    width:100%;
+    max-width:480px;
+    justify-self:stretch;
+  }
+  .project__title{
+    font-size:clamp(2rem,11vw,3.5rem);
+  }
+  .project__desc{
+    font-size:.95rem;
+  }
+  .project__facts{
+    gap:8px 12px;
+  }
+  .project__facts li{
+    font-size:.65rem;
+    padding:5px 9px;
+  }
+  .about{
+    gap:36px;
+  }
+  .about__lede{
+    font-size:1.15rem;
+    margin:20px 0 18px;
+  }
+  .about__visual{
+    margin-top:0;
+  }
+  .about__terminal{
+    width:100%;
+    padding:16px 14px 18px;
+    font-size:.65rem;
+  }
+  .skills__graphic{
+    flex:0 0 auto;
+    width:140px;
+    height:104px;
+    align-self:flex-end;
+    transform:translateX(0) scale(.9) rotate(-8deg);
+    transform-origin:top right;
+    margin:0 -4px -14px 0;
+  }
+  .skills__grid{
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+  .skills__grid .about__block{
+    padding-top:14px;
+  }
+  .contact{
+    padding:72px 20px 40px;
+  }
+  .contact__statement{
+    width:100%;
+    max-width:100%;
+    font-size:clamp(1.8rem,10vw,4.2rem);
+    letter-spacing:-.04em;
+    overflow-wrap:anywhere;
+  }
+  .contact__email{
+    max-width:100%;
+    margin-top:28px;
+    font-size:.9rem;
+    overflow-wrap:anywhere;
+  }
+  .footer__row{
+    padding:18px 20px;
+  }
+}
+
+@media (min-width:761px) and (max-width:1100px){
+  .skills__graphic{
+    transform:translateX(18px) rotate(-8deg);
+  }
+}
 
 /* =========================== REDUCED MOTION =========================== */
 @media (prefers-reduced-motion: reduce){
