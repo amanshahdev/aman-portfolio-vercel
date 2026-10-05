@@ -447,6 +447,18 @@ button{ font-family:inherit; background:none; border:0; color:inherit; cursor:po
 
 /* =========================== MOBILE LAYOUT =========================== */
 @media (max-width:760px){
+  .preloader{
+    padding:20px;
+  }
+  .preloader__word{
+    width:100%;
+    justify-content:center;
+    font-size:clamp(2rem,14vw,4rem);
+    letter-spacing:-.04em;
+  }
+  .preloader__bar{
+    width:min(220px,72vw);
+  }
   .nav{
     padding:18px 20px;
   }
@@ -461,7 +473,16 @@ button{ font-family:inherit; background:none; border:0; color:inherit; cursor:po
     padding:var(--nav-h) 20px 0;
   }
   .hero__title{
-    font-size:clamp(3rem,17vw,6.5rem);
+    width:100%;
+    font-size:clamp(2.6rem,15vw,5.2rem);
+    letter-spacing:-.05em;
+  }
+  .hero__line{
+    width:100%;
+  }
+  .hero__line--2{
+    align-self:flex-start;
+    justify-content:flex-end;
   }
   .hero__meta{
     align-items:flex-start;
@@ -499,11 +520,11 @@ button{ font-family:inherit; background:none; border:0; color:inherit; cursor:po
     letter-spacing:-.03em;
   }
   .experience__graphic{
-    width:170px;
-    height:112px;
-    align-self:flex-end;
-    margin-top:-18px;
-    transform:translateX(0) rotate(-8deg);
+    width:min(170px,72vw);
+    height:auto;
+    align-self:center;
+    margin-top:-4px;
+    transform:rotate(-8deg);
   }
   .experience__card{
     grid-template-columns:1fr;
@@ -524,11 +545,11 @@ button{ font-family:inherit; background:none; border:0; color:inherit; cursor:po
     padding:52px 20px 24px;
   }
   .work__graphic{
-    width:185px;
-    height:101px;
-    align-self:flex-end;
-    margin-top:-18px;
-    transform:translateX(0) rotate(-5deg);
+    width:min(185px,78vw);
+    height:auto;
+    align-self:center;
+    margin-top:-4px;
+    transform:rotate(-5deg);
   }
   .project,
   .project:nth-child(even){
@@ -573,12 +594,12 @@ button{ font-family:inherit; background:none; border:0; color:inherit; cursor:po
   }
   .skills__graphic{
     flex:0 0 auto;
-    width:140px;
+    width:min(140px,65vw);
     height:104px;
-    align-self:flex-end;
-    transform:translateX(0) scale(.9) rotate(-8deg);
+    align-self:center;
+    transform:scale(.9) rotate(-8deg);
     transform-origin:top right;
-    margin:0 -4px -14px 0;
+    margin:0 0 -14px;
   }
   .skills__grid{
     grid-template-columns:1fr;
