@@ -174,7 +174,7 @@
 
     var projects = [
       { title: "Fact-based Bank Chat Engine", tag: "AI + Data Systems", desc: "A CLI chatbot that converts natural-language questions into validated predicates, resolves exact ltree paths, and returns answers from an immutable PostgreSQL EAV database.", facts: ["Python", "Lark", "PostgreSQL + ltree", "Groq + Pydantic"], github: "https://github.com/amanshahdev/bank-chat-engine.git", art: '<rect width="800" height="800" fill="#0A0A0B"/><path d="M110 330h580M160 330v280M280 330v280M400 330v280M520 330v280M640 330v280M100 610h600" stroke="#F3EEE3" stroke-width="18"/><path d="m90 300 310-90 310 90Z" fill="#2438FF" stroke="#F3EEE3" stroke-width="18"/><circle cx="650" cy="180" r="42" fill="#D8FF3E"/>' },
-      { title: "AI Code Reviewer", tag: "Developer Platform", desc: "An enterprise review platform that ingests GitHub repositories or ZIPs, runs security and quality analyzers, and coordinates specialized AI agents for grounded findings. Reviews stream live and track issues as new, open, or resolved across runs.", facts: ["FastAPI + Python", "Next.js", "PostgreSQL + Redis", "MinIO + LangGraph"], github: "https://github.com/amanshahdev/ai-code-reviewer", art: '<rect width="800" height="800" fill="#0A0A0B"/><rect x="100" y="120" width="600" height="560" rx="22" fill="#F3EEE3"/><path d="M170 260h190M170 340h390M170 420h270M170 500h150" stroke="#FF3E9A" stroke-width="26" stroke-linecap="round"/><path d="m520 400 55 55-55 55M640 400l-55 55 55 55" fill="none" stroke="#2438FF" stroke-width="24"/>' },
+      { title: "AI Code Reviewer", tag: "Developer Platform", desc: "Contributed to an AI-powered code review platform for GitHub repositories by building an automated security and code quality analysis pipeline (Bandit, Semgrep, Gitleaks, Ruff, and others) with GitHub OAuth 2.0 authentication and validation. Built an LLM-powered code analysis chatbot with semantic search and Git-based issue tracking.", facts: ["FastAPI + Python", "Next.js", "PostgreSQL + Redis", "MinIO + LangGraph"], github: "https://github.com/amanshahdev/ai-code-reviewer", art: '<rect width="800" height="800" fill="#0A0A0B"/><rect x="100" y="120" width="600" height="560" rx="22" fill="#F3EEE3"/><path d="M170 260h190M170 340h390M170 420h270M170 500h150" stroke="#FF3E9A" stroke-width="26" stroke-linecap="round"/><path d="m520 400 55 55-55 55M640 400l-55 55 55 55" fill="none" stroke="#2438FF" stroke-width="24"/>' },
       { title: "VisionAID", tag: "Accessibility App", desc: "A Flutter mobile app designed to help visually impaired users access printed information. It captures text, applies OCR, and turns the result into speech through a simple, focused reading flow.", facts: ["Flutter", "Dart", "OCR", "Text-to-speech"], github: "https://github.com/amanshahdev/visionaid-v2", art: '<rect width="800" height="800" fill="#D8FF3E"/><rect x="175" y="130" width="450" height="540" rx="46" fill="#0A0A0B"/><path d="M245 290h310M245 380h225M245 470h260" stroke="#F3EEE3" stroke-width="24" stroke-linecap="round"/><path d="M520 570c75-50 105-125 105-205M590 385c40 26 58 61 58 105" fill="none" stroke="#FF3E9A" stroke-width="20"/>' },
       { title: "ResumeAI", tag: "AI Web App", desc: "A full-stack resume analysis workspace where users can create accounts, upload PDF resumes, and review AI-generated strengths, gaps, and improvement suggestions. It also keeps analysis history and dashboard statistics available for future applications.", facts: ["React + React Router", "Node.js + Express", "MongoDB + Mongoose", "JWT + Multer"], github: "https://github.com/amanshahdev/resume-ai", live: "https://resume-ai-app1.vercel.app", art: '<rect width="800" height="800" fill="#FF4E1F"/><rect x="180" y="90" width="400" height="620" fill="#F3EEE3" stroke="#0A0A0B" stroke-width="18"/><circle cx="275" cy="220" r="52" fill="#FF3E9A"/><path d="M370 205h140M235 350h290M235 430h290M235 510h190" stroke="#0A0A0B" stroke-width="24" stroke-linecap="round"/><path d="m600 590 35 35 90-110" fill="none" stroke="#0A0A0B" stroke-width="25"/>' },
       { title: "AG News Text Classifier", tag: "Machine Learning", desc: "A reproducible NLP pipeline that classifies news articles into World, Sports, Business, or Sci/Tech. The project cleans and lemmatizes text, builds TF-IDF unigram and bigram features, selects a Linear SVM, and includes saved artifacts for direct inference.", facts: ["Python", "NLTK preprocessing", "TF-IDF", "Linear SVM"], github: "https://github.com/amanshahdev/ag-news-text-classifier", art: '<rect width="800" height="800" fill="#F3EEE3"/><rect x="80" y="120" width="640" height="560" fill="#0A0A0B"/><path d="M140 210h220v240H140ZM420 210h230M420 290h180M420 370h210M420 450h140" stroke="#2438FF" stroke-width="28"/><circle cx="250" cy="330" r="54" fill="#D8FF3E"/>' },
@@ -213,8 +213,6 @@
     work.appendChild(list);
     work.appendChild(toggle);
     list.querySelectorAll("[data-project-extra]").forEach(function (project) { project.hidden = true; });
-    var total = document.getElementById("workTotal");
-    if (total) total.textContent = String(projects.length).padStart(2, "0");
   }
 
   /* ---------------------------------------------------------
@@ -244,6 +242,11 @@
       });
     });
 
+    gsap.from(".experience__card", {
+      opacity: 0, y: 24, duration: 0.8, ease: "power2.out", stagger: 0.08,
+      scrollTrigger: { trigger: ".experience", start: "top 70%" }
+    });
+
     gsap.from(".about__lede, .about__body, .about__block", {
       opacity: 0, y: 24, duration: 0.8, ease: "power2.out", stagger: 0.08,
       scrollTrigger: { trigger: ".about", start: "top 70%" }
@@ -254,19 +257,6 @@
       scrollTrigger: { trigger: ".contact", start: "top 75%" }
     });
 
-    // Work counter — updates as each project crosses the viewport center
-    var projects = document.querySelectorAll("[data-project]");
-    var currentEl = document.getElementById("workCurrent");
-    projects.forEach(function (p, i) {
-      ScrollTrigger.create({
-        trigger: p, start: "top center", end: "bottom center",
-        onToggle: function (self) {
-          if (self.isActive && currentEl) {
-            currentEl.textContent = String(i + 1).padStart(2, "0");
-          }
-        }
-      });
-    });
   }
 
   /* ---------------------------------------------------------

@@ -48,10 +48,11 @@
   <nav class="nav__menu" id="navMenu">
     <a href="#top" class="nav__menu-back" aria-label="Back to top">←</a>
     <ol>
-      <li><a href="#work" data-cursor="View">01 — Work</a></li>
-      <li><a href="#about" data-cursor="Read">02 — About</a></li>
-      <li><a href="#skills" data-cursor="Learn">03 — Tools I work with everyday</a></li>
-      <li><a href="#contact" data-cursor="Say hi">04 — Contact</a></li>
+      <li><a href="#about" data-cursor="Read">01 — About</a></li>
+      <li><a href="#experience" data-cursor="Read">02 — Experience</a></li>
+      <li><a href="#work" data-cursor="View">03 — Work</a></li>
+      <li><a href="#skills" data-cursor="Learn">04 — Tools I work with everyday</a></li>
+      <li><a href="#contact" data-cursor="Say hi">05 — Contact</a></li>
     </ol>
   </nav>
 
@@ -86,16 +87,79 @@
   <!-- ===================== INTRO STRIP ===================== -->
   <section class="intro">
     <p class="intro__text">
-      <span class="intro__line intro__line--white">I build things, break things,</span>
-      <span class="intro__line intro__line--accent">and occasionally make them work.</span>
+      <span class="intro__line intro__line--white">while (true) { build();</span><span class="intro__line intro__line--accent"> break(); learn(); }</span>
     </p>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section class="about" id="about">
+    <div class="about__col about__col--main">
+      <h2 class="section-title">About</h2>
+      <p class="about__lede">I build things that think and things that scale. I work across the stack, from machine learning models in Python to React front ends, Node/Express APIs, and MongoDB and SQL back ends.</p>
+      <a href="/public/resume/Aman_Shah_Resume.pdf" class="about__resume hero__resume" target="_blank" rel="noopener" data-cursor="Resume">View resume ↗</a>
+    </div>
+    <div class="about__visual" aria-hidden="true">
+      <div class="about__terminal">
+        <div class="about__terminal-bar">
+          <span class="about__terminal-dot about__terminal-dot--orange"></span>
+          <span class="about__terminal-dot about__terminal-dot--lime"></span>
+          <span class="about__terminal-dot about__terminal-dot--blue"></span>
+        </div>
+        <p><span class="about__terminal-prompt">aman@portfolio:~$</span> whoami</p>
+        <p class="about__terminal-output">Aman Shah</p>
+        <p><span class="about__terminal-prompt">aman@portfolio:~$</span> build something useful</p>
+        <p class="about__terminal-output about__terminal-output--accent">status: ready</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== EXPERIENCE ===================== -->
+  <section class="experience" id="experience">
+    <div class="experience__head">
+      <h2 class="section-title">Professional<br><span>Experience</span></h2>
+      <div class="experience__graphic" aria-hidden="true">
+        <svg viewBox="0 0 180 120" fill="none">
+          <path d="M18 60h38M124 60h38M90 18v26M90 76v26" stroke="currentColor" stroke-width="1"/>
+          <path d="m53 31 25 19M127 31l-25 19M53 89l25-19M127 89l-25-19" stroke="currentColor" stroke-width="1"/>
+          <rect x="68" y="44" width="44" height="32" rx="2" stroke="var(--orange)" stroke-width="2"/>
+          <path d="m80 56 6 5-6 5M94 66h8" stroke="var(--lime)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="18" cy="60" r="5" fill="var(--orange)"/>
+          <circle cx="162" cy="60" r="5" fill="var(--lime)"/>
+          <circle cx="90" cy="18" r="5" fill="var(--cobalt)"/>
+          <circle cx="90" cy="102" r="5" fill="var(--bone)"/>
+        </svg>
+      </div>
+    </div>
+
+    <article class="experience__card">
+      <div class="experience__logo">
+        <img src="public/alpinistlogo.png" alt="Alpinist company logo">
+      </div>
+      <div class="experience__details">
+        <p class="experience__period">May 2026 — August 2026</p>
+        <h3>Artificial Intelligence Intern</h3>
+        <p class="experience__company">Alpinist Studios</p>
+        <p class="experience__location">Manbhawan, Lalitpur</p>
+        <p class="experience__description">Worked as an AI intern on applied ML and LLM projects. My main contribution was an AI-powered code review platform for GitHub repositories, combining automated security and quality analysis with an LLM chatbot for semantic code search and issue tracking. I also built a banking chatbot that turns natural-language questions into safe, read-only SQL over PostgreSQL, and a news classification system using TF-IDF and Linear SVM.</p>
+      </div>
+    </article>
   </section>
 
   <!-- ===================== WORK ===================== -->
   <section class="work" id="work">
     <div class="work__head">
       <h2 class="section-title">My&nbsp;Work</h2>
-      <p class="work__counter"><span id="workCurrent">01</span> / <span id="workTotal">08</span></p>
+      <div class="work__graphic" aria-hidden="true">
+        <svg viewBox="0 0 220 120" fill="none">
+          <rect x="24" y="18" width="86" height="78" stroke="var(--bone)" stroke-width="1"/>
+          <rect x="50" y="34" width="112" height="68" stroke="var(--orange)" stroke-width="2"/>
+          <rect x="76" y="50" width="112" height="52" fill="var(--cobalt)"/>
+          <path d="M88 66h54M88 78h34" stroke="var(--bone)" stroke-width="4" stroke-linecap="round"/>
+          <path d="M168 28v18M159 37h18" stroke="var(--lime)" stroke-width="3"/>
+          <circle cx="42" cy="30" r="4" fill="var(--orange)"/>
+          <circle cx="176" cy="92" r="4" fill="var(--lime)"/>
+        </svg>
+      </div>
     </div>
 
     <!-- PROJECT 01 -->
@@ -274,28 +338,6 @@
         </ul>
       </div>
     </article>
-  </section>
-
-  <!-- ===================== ABOUT ===================== -->
-  <section class="about" id="about">
-    <div class="about__col about__col--main">
-      <h2 class="section-title">About</h2>
-      <p class="about__lede">I build things that think and things that scale. I work across the stack, from machine learning models in Python to React front ends, Node/Express APIs, and MongoDB and SQL back ends.</p>
-      <a href="/public/resume/Aman_Shah_Resume.pdf" class="about__resume hero__resume" target="_blank" rel="noopener" data-cursor="Resume">View resume ↗</a>
-    </div>
-    <div class="about__visual" aria-hidden="true">
-      <div class="about__terminal">
-        <div class="about__terminal-bar">
-          <span class="about__terminal-dot about__terminal-dot--orange"></span>
-          <span class="about__terminal-dot about__terminal-dot--lime"></span>
-          <span class="about__terminal-dot about__terminal-dot--blue"></span>
-        </div>
-        <p><span class="about__terminal-prompt">aman@portfolio:~$</span> whoami</p>
-        <p class="about__terminal-output">Aman Shah</p>
-        <p><span class="about__terminal-prompt">aman@portfolio:~$</span> build something useful</p>
-        <p class="about__terminal-output about__terminal-output--accent">status: ready</p>
-      </div>
-    </div>
   </section>
 
   <!-- ===================== SKILLS ===================== -->
