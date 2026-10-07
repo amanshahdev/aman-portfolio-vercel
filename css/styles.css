@@ -430,10 +430,9 @@ button{ font-family:inherit; background:none; border:0; color:inherit; cursor:po
   overflow:hidden;
 }
 .certification-card__logo img{
-  display:block; width:100%; height:100%; object-fit:contain;
+  display:block; width:95%; height:82%; object-fit:contain;
   mix-blend-mode:multiply;
 }
-.certification-card__logo--wide img{ max-width:95%; max-height:82%; }
 .certification-card__body{ display:flex; flex:1; flex-direction:column; padding:1.25rem; }
 .certification-card__body h3{
   min-height:3.25em; font-size:1.05rem; line-height:1.2; letter-spacing:-.01em;
