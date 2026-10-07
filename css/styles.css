@@ -433,6 +433,7 @@ button{ font-family:inherit; background:none; border:0; color:inherit; cursor:po
   display:block; width:95%; height:82%; object-fit:contain;
   mix-blend-mode:multiply;
 }
+.certification-card__logo--cisco img{ width:115%; height:100%; }
 .certification-card__body{ display:flex; flex:1; flex-direction:column; padding:1.25rem; }
 .certification-card__body h3{
   min-height:3.25em; font-size:1.05rem; line-height:1.2; letter-spacing:-.01em;
