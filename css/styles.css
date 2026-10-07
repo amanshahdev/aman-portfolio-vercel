@@ -643,7 +643,7 @@ button{ font-family:inherit; background:none; border:0; color:inherit; cursor:po
   }
   .skills__grid{
     grid-template-columns:1fr;
-    gap:0.625rem;
+    gap:1rem;
   }
   .skill-card{
     padding:1.25rem 1rem 1rem;
