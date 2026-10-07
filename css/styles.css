@@ -299,6 +299,7 @@ button{ font-family:inherit; background:none; border:0; color:inherit; cursor:po
 .work__graphic svg{
   display:block; width:100%; height:100%; max-width:100%;
 }
+.work__title-accent{ color:var(--lime); }
 .project{
   display:grid; grid-template-columns:1fr 1fr; gap:clamp(1.5rem,5vw,5rem);
   align-items:center; padding:3.5rem 0; border-bottom:1px solid rgba(243,238,227,.12);
@@ -405,6 +406,7 @@ button{ font-family:inherit; background:none; border:0; color:inherit; cursor:po
 }
 .skills__grid .about__block{ margin:0; padding-top:1.375rem; }
 .skills__grid .about__block h3{ font-size:1.1rem; }
+.skills__grid .about__block li{ font-size:1.08rem; }
 /* =========================== CERTIFICATIONS =========================== */
 .certifications{
   padding:4rem clamp(1.25rem,4vw,3rem);
