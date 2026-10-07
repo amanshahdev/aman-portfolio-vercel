@@ -111,6 +111,27 @@
   }
 
   /* ---------------------------------------------------------
+     CERTIFICATIONS — make each card open its verification link
+  --------------------------------------------------------- */
+  function setupCertificationCards() {
+    document.querySelectorAll("[data-cert-link]").forEach(function (card) {
+      function openCertificate() {
+        window.open(card.getAttribute("data-cert-link"), "_blank", "noopener");
+      }
+
+      card.addEventListener("click", function (event) {
+        if (event.target.closest("a")) return;
+        openCertificate();
+      });
+      card.addEventListener("keydown", function (event) {
+        if (event.key !== "Enter" && event.key !== " ") return;
+        event.preventDefault();
+        openCertificate();
+      });
+    });
+  }
+
+  /* ---------------------------------------------------------
      HERO — magnetic letters + intro reveal
   --------------------------------------------------------- */
   var heroLetters = [];
@@ -266,6 +287,7 @@
     setupProjects();
     setupCursor();
     setupNav();
+    setupCertificationCards();
     setupHeroMagnet();
     setupScrollReveals();
     runPreloader();

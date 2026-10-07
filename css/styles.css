@@ -422,6 +422,7 @@ button{ font-family:inherit; background:none; border:0; color:inherit; cursor:po
   border:1px solid rgba(243,238,227,.18); background:rgba(10,10,11,.5);
   transition:border-color .2s ease, transform .2s ease;
 }
+.certification-card:focus-visible{ outline:2px solid var(--lime); outline-offset:.25rem; }
 .certification-card:hover{ border-color:var(--lime); transform:translateY(-.25rem); }
 .certification-card__logo{
   display:flex; align-items:center; justify-content:center; height:11rem;
