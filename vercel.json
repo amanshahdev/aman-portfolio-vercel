@@ -2,6 +2,12 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/aws-certificate",
+      "destination": "/public/aws-certificate/AmanShah_AWS_CloudPractitionerEssentials_Certificate.pdf"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -45,6 +51,15 @@
     },
     {
       "source": "/public/resume/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/public/aws-certificate/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
