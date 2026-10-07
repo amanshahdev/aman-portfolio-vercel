@@ -391,7 +391,7 @@ button{ font-family:inherit; background:none; border:0; color:inherit; cursor:po
 }
 .skill-card li{
   padding:.55rem 0; border-bottom:1px solid rgba(243,238,227,.12);
-  color:var(--bone-dim); font-size:1.08rem;
+  color:var(--bone-dim); font-size:1rem;
 }
 .skill-card li:last-child{ border-bottom:0; }
 /* =========================== CERTIFICATIONS =========================== */
