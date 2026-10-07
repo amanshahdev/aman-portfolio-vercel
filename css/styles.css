@@ -242,16 +242,9 @@ button{ font-family:inherit; background:none; border:0; color:inherit; cursor:po
   border-top:1px solid rgba(243,238,227,.12);
 }
 .experience__head{
-  display:flex; justify-content:space-between; align-items:flex-end;
-  gap:1.5rem; margin-bottom:2.25rem;
+  margin-bottom:2rem;
 }
 .experience__head .section-title span{ color:var(--orange); }
-.experience__graphic{
-  width:15.625rem; height:10.375rem; max-width:100%; color:var(--cobalt); transform:translateX(-1.125rem) rotate(-8deg);
-}
-.experience__graphic svg{
-  display:block; width:100%; height:100%;
-}
 .experience__eyebrow{
   margin:0 0 0.5rem; color:var(--bone-dim); font-family:var(--body);
   font-size:.78rem; letter-spacing:.1em; text-transform:uppercase;
@@ -290,20 +283,14 @@ button{ font-family:inherit; background:none; border:0; color:inherit; cursor:po
 /* =========================== WORK =========================== */
 .work{ padding:4rem clamp(1.25rem,4vw,3rem) 1.5rem; border-top:1px solid rgba(243,238,227,.12); }
 .work__head{
-  display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:2.25rem; flex-wrap:wrap; gap:1rem;
-}
-.work__graphic{
-  width:15.625rem; height:8.5rem; max-width:100%; transform:translateX(-7.5rem) rotate(-5deg);
-  overflow:visible;
-}
-.work__graphic svg{
-  display:block; width:100%; height:100%; max-width:100%;
+  margin-bottom:1rem;
 }
 .work__title-accent{ color:var(--lime); }
 .project{
   display:grid; grid-template-columns:1fr 1fr; gap:clamp(1.5rem,5vw,5rem);
   align-items:center; padding:3.5rem 0; border-bottom:1px solid rgba(243,238,227,.12);
 }
+.project-list .project:first-child{ padding-top:1.5rem; }
 .project:nth-child(even){ direction:rtl; }
 .project:nth-child(even) > *{ direction:ltr; }
 .project__art{
@@ -380,27 +367,10 @@ button{ font-family:inherit; background:none; border:0; color:inherit; cursor:po
   border-top:1px solid rgba(243,238,227,.12);
 }
 .skills__head{
-  max-width:56.25rem; margin-bottom:2.25rem; display:flex; align-items:center;
-  justify-content:space-between; gap:2.5rem;
+  margin-bottom:2rem;
 }
 .skills__title-accent{ color:var(--lime); }
 .skills__intro{ color:var(--bone-dim); margin-top:0.875rem; }
-.skills__graphic{
-  position:relative; flex:0 0 10.3125rem; height:7.625rem; transform:translateX(3.125rem) rotate(-8deg);
-}
-.skills__graphic-orbit{
-  position:absolute; inset:50% auto auto 50%; border:1px solid var(--cobalt);
-  border-radius:50%; transform:translate(-50%,-50%) rotate(28deg);
-}
-.skills__graphic-orbit--outer{ width:8.75rem; height:3.625rem; }
-.skills__graphic-orbit--inner{ width:6rem; height:2.625rem; border-color:var(--orange); transform:translate(-50%,-50%) rotate(-38deg); }
-.skills__graphic-node{ position:absolute; width:0.625rem; height:0.625rem; border-radius:50%; }
-.skills__graphic-node--orange{ top:0.75rem; right:1.5rem; background:var(--orange); }
-.skills__graphic-node--lime{ bottom:0.875rem; left:1.75rem; background:var(--lime); }
-.skills__graphic-code{
-  position:absolute; inset:50% auto auto 50%; transform:translate(-50%,-50%);
-  font-family:var(--body); font-size:1.15rem; color:var(--bone); letter-spacing:.04em;
-}
 .skills__grid{
   display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(2.375rem,5vw,4.5rem) clamp(1.75rem,6vw,5.5rem);
 }
@@ -567,26 +537,16 @@ button{ font-family:inherit; background:none; border:0; color:inherit; cursor:po
   .experience__head,
   .work__head,
   .skills__head{
-    align-items:flex-start;
-    flex-direction:column;
-    gap:0.75rem;
-    margin-bottom:1.75rem;
+    margin-bottom:1.5rem;
   }
   .experience__head .section-title,
   .work__head .section-title,
   .skills__head .section-title{
+    flex:1 1 auto;
     width:100%;
     max-width:100%;
     font-size:clamp(1.8rem,9vw,3.2rem);
     letter-spacing:-.03em;
-  }
-  .experience__graphic{
-    width:9.375rem;
-    height:6.25rem;
-    align-self:flex-end;
-    margin-top:-1.25rem;
-    transform:rotate(-5deg);
-    margin-right:0;
   }
   .experience__card{
     grid-template-columns:1fr;
@@ -606,13 +566,6 @@ button{ font-family:inherit; background:none; border:0; color:inherit; cursor:po
   .work{
     padding:3.25rem 1.25rem 1.5rem;
   }
-  .work__graphic{
-    width:10.625rem;
-    height:6.5625rem;
-    align-self:flex-start;
-    margin-top:-1.125rem;
-    transform:translateX(-1.5rem) rotate(-3deg);
-  }
   .project,
   .project:nth-child(even){
     grid-template-columns:1fr;
@@ -620,6 +573,7 @@ button{ font-family:inherit; background:none; border:0; color:inherit; cursor:po
     gap:1.25rem;
     padding:2rem 0;
   }
+  .project-list .project:first-child{ padding-top:1rem; }
   .project__art,
   .project:nth-child(even) .project__art{
     width:100%;
@@ -670,15 +624,6 @@ button{ font-family:inherit; background:none; border:0; color:inherit; cursor:po
     transform:rotate(0deg);
     box-shadow:0.25rem 0.25rem 0 var(--orange);
   }
-  .skills__graphic{
-    flex:0 0 auto;
-    width:7.8125rem;
-    height:6.25rem;
-    align-self:flex-end;
-    transform:scale(.7) rotate(-6deg);
-    transform-origin:top right;
-    margin:0 0 -0.75rem 0;
-  }
   .skills__grid{
     grid-template-columns:1fr;
     gap:0.625rem;
@@ -719,13 +664,6 @@ button{ font-family:inherit; background:none; border:0; color:inherit; cursor:po
 }
 
 @media (min-width:761px) and (max-width:1100px){
-  .skills__graphic{
-    transform:translateX(1.125rem) rotate(-8deg);
-  }
-  .experience__head,
-  .skills__head{
-    flex-wrap:wrap;
-  }
   .experience__card{
     grid-template-columns:7rem 1fr;
     gap:clamp(1.25rem,4vw,3rem);
