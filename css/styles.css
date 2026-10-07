@@ -406,6 +406,52 @@ button{ font-family:inherit; background:none; border:0; color:inherit; cursor:po
 }
 .skills__grid .about__block{ margin:0; padding-top:1.375rem; }
 .skills__grid .about__block h3{ font-size:1.1rem; }
+/* =========================== CERTIFICATIONS =========================== */
+.certifications{
+  padding:4rem clamp(1.25rem,4vw,3rem);
+  border-top:1px solid rgba(243,238,227,.12);
+}
+.certifications__head{
+  display:flex; align-items:flex-end; justify-content:space-between; gap:2rem;
+  margin-bottom:2.25rem;
+}
+.certifications__head .section-title span{ color:var(--orange); }
+.certifications__intro{ max-width:28rem; color:var(--bone-dim); line-height:1.6; }
+.certifications__grid{
+  display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem;
+}
+.certification-card{
+  display:flex; flex-direction:column; min-width:0;
+  border:1px solid rgba(243,238,227,.18); background:rgba(10,10,11,.5);
+  transition:border-color .2s ease, transform .2s ease;
+}
+.certification-card:hover{ border-color:var(--lime); transform:translateY(-.25rem); }
+.certification-card__logo{
+  display:flex; align-items:center; justify-content:center; height:11rem;
+  padding:1.25rem; background:var(--bone);
+  overflow:hidden;
+}
+.certification-card__logo img{
+  display:block; width:100%; height:100%; object-fit:contain;
+  mix-blend-mode:multiply;
+}
+.certification-card__logo--wide img{ max-width:85%; max-height:65%; }
+.certification-card__body{ display:flex; flex:1; flex-direction:column; padding:1.25rem; }
+.certification-card__body h3{
+  min-height:3.25em; font-size:1.05rem; line-height:1.2; letter-spacing:-.01em;
+}
+.certification-card__body p{
+  margin:.75rem 0 1.25rem; color:var(--bone-dim); font-family:var(--mono);
+  font-size:.68rem; line-height:1.6;
+}
+.certification-card__body p span{ color:var(--orange); }
+.certification-card__body a{
+  align-self:flex-start; margin-top:auto; color:var(--lime);
+  border-bottom:1px solid var(--lime); padding-bottom:.25rem;
+  font-family:var(--mono); font-size:.7rem; text-transform:uppercase; letter-spacing:.04em;
+  transition:color .2s ease, border-color .2s ease;
+}
+.certification-card__body a:hover{ color:var(--orange); border-color:var(--orange); }
 /* =========================== CONTACT =========================== */
 .contact{
   padding:min(9vw,6.5rem) clamp(1.25rem,4vw,3rem) 2.5rem;
@@ -507,7 +553,8 @@ button{ font-family:inherit; background:none; border:0; color:inherit; cursor:po
   }
   .experience,
   .about,
-  .skills{
+  .skills,
+  .certifications{
     padding:3.25rem 1.25rem;
   }
   .experience__head,
@@ -626,6 +673,15 @@ button{ font-family:inherit; background:none; border:0; color:inherit; cursor:po
   .skills__grid .about__block{
     padding-top:0.875rem;
   }
+  .certifications__head{
+    align-items:flex-start; flex-direction:column; gap:.75rem; margin-bottom:1.75rem;
+  }
+  .certifications__head .section-title{
+    width:100%; font-size:clamp(1.8rem,9vw,3.2rem); letter-spacing:-.03em;
+  }
+  .certifications__grid{ grid-template-columns:1fr; gap:.875rem; }
+  .certification-card__logo{ height:12rem; }
+  .certification-card__body h3{ min-height:0; }
   .contact{
     padding:4.5rem 1.25rem 2.5rem;
   }
@@ -664,6 +720,8 @@ button{ font-family:inherit; background:none; border:0; color:inherit; cursor:po
   .skills__grid{
     gap:2rem 2.5rem;
   }
+  .certifications__grid{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .certifications__head{ align-items:flex-start; flex-wrap:wrap; }
 }
 
 @media (min-width:761px) and (max-width:900px){
