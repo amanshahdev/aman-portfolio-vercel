@@ -164,8 +164,10 @@ button{ font-family:inherit; background:none; border:0; color:inherit; cursor:po
 .hero__eyebrow{
   font-family:var(--body); font-size:clamp(.68rem,1.1vw,.85rem);
   text-transform:uppercase; letter-spacing:.12em; color:var(--bone-dim);
-  max-width:32.5rem; margin:0 0 1.125rem;
-  display:none;
+  max-width:32.5rem; margin:0 0 1.125rem; display:flex; align-items:center; gap:.5rem;
+}
+.hero__eyebrow span{
+  color:var(--orange); font-size:1.1em; font-weight:700;
 }
 .hero__title{
   display:flex; flex-direction:column; line-height:.86;
