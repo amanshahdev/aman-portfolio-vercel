@@ -19,22 +19,32 @@
     var letters = pre.querySelectorAll(".preloader__word span");
     var bar = pre.querySelector(".preloader__bar span");
 
-    if (!hasGSAP || reduceMotion) {
-      pre.style.display = "none";
-      return;
+    function reveal() {
+      if (!hasGSAP || reduceMotion) {
+        pre.style.display = "none";
+        return;
+      }
+
+      var tl = gsap.timeline({
+        onComplete: function () {
+          pre.style.pointerEvents = "none";
+          gsap.to(pre, { autoAlpha: 0, duration: 0.6, onComplete: function () { pre.remove(); } });
+        }
+      });
+      tl.to(letters, { opacity: 1, y: 0, duration: 0.55, stagger: 0.06, ease: "power3.out" })
+        .to(bar, { width: "100%", duration: 0.6, ease: "power1.inOut" }, "-=0.2")
+        .to({}, { duration: 0.15 });
+
+      playHeroIntro();
     }
 
-    var tl = gsap.timeline({
-      onComplete: function () {
-        pre.style.pointerEvents = "none";
-        gsap.to(pre, { autoAlpha: 0, duration: 0.6, onComplete: function () { pre.remove(); } });
-      }
+    var fontsReady = document.fonts && document.fonts.ready
+      ? document.fonts.ready
+      : Promise.resolve();
+    var timeout = new Promise(function (resolve) {
+      window.setTimeout(resolve, 1500);
     });
-    tl.to(letters, { opacity: 1, y: 0, duration: 0.55, stagger: 0.06, ease: "power3.out" })
-      .to(bar, { width: "100%", duration: 0.6, ease: "power1.inOut" }, "-=0.2")
-      .to({}, { duration: 0.15 });
-
-    playHeroIntro();
+    Promise.race([fontsReady, timeout]).then(reveal);
   }
 
   /* ---------------------------------------------------------
