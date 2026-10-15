@@ -687,7 +687,7 @@ button{ font-family:inherit; background:none; border:0; color:inherit; cursor:po
     gap:.65rem;
   }
   .skill-card ul{
-    grid-template-columns:1fr;
+    grid-template-columns:repeat(2,minmax(0,1fr));
   }
   .certifications__head{
     align-items:flex-start; flex-direction:column; gap:.75rem; margin-bottom:1.75rem;
