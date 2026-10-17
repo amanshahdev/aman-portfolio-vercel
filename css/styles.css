@@ -550,13 +550,13 @@ button{ font-family:inherit; background:none; border:0; color:inherit; cursor:po
 }
 .resume-modal__eyebrow span{ font-size:1.2em; }
 .resume-modal__header h2{ font-size:clamp(1.3rem,3vw,2rem); letter-spacing:-.04em; }
-.resume-modal__actions{ display:flex; align-items:center; gap:1.25rem; }
+.resume-modal__actions{ display:flex; align-items:center; gap:1.25rem; margin-left:auto; }
 .resume-modal__download,.resume-modal__close{
   font-family:var(--body); font-size:.72rem; letter-spacing:.08em; text-transform:uppercase;
 }
 .resume-modal__download{
   display:inline-flex; align-items:center; gap:.5rem; padding:.75rem 1rem;
-  color:var(--black); background:var(--lime); transition:background .2s, transform .2s;
+  color:var(--black); background:var(--orange); transition:background .2s, transform .2s;
 }
 .resume-modal__download span{ font-size:1.3rem; line-height:.5; }
 .resume-modal__download:hover,.resume-modal__download:focus-visible{ background:var(--orange); transform:translateY(-.125rem); }
@@ -856,7 +856,7 @@ button{ font-family:inherit; background:none; border:0; color:inherit; cursor:po
 ::selection{ background:var(--orange); color:var(--black); }
 
 /* Resume preview refinements */
-.resume-modal__dialog{ background:var(--black); border-color:rgba(243,238,227,.28); box-shadow:.65rem .65rem 0 var(--lime); }
+.resume-modal__dialog{ background:var(--black); border-color:rgba(243,238,227,.28); box-shadow:none; }
 .resume-modal__header{ background:var(--black); padding:1rem clamp(1.25rem,3vw,2.5rem); }
 .resume-modal__header h2{ color:var(--bone); }
 .resume-modal__body{ grid-template-columns:1fr; }
