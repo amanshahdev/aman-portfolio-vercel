@@ -142,6 +142,46 @@
   }
 
   /* ---------------------------------------------------------
+     RESUME — show the styled preview before offering the source PDF
+  --------------------------------------------------------- */
+  function setupResumeModal() {
+    var modal = document.getElementById("resumeModal");
+    var triggers = document.querySelectorAll("[data-resume-trigger]");
+    if (!modal || !triggers.length) return;
+
+    var closeButton = modal.querySelector(".resume-modal__close");
+    var lastTrigger = null;
+
+    function close() {
+      modal.classList.remove("is-open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+      if (lastTrigger) lastTrigger.focus();
+    }
+
+    function open(trigger) {
+      lastTrigger = trigger;
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      closeButton.focus();
+    }
+
+    triggers.forEach(function (trigger) {
+      trigger.addEventListener("click", function (event) {
+        event.preventDefault();
+        open(trigger);
+      });
+    });
+    modal.querySelectorAll("[data-resume-close]").forEach(function (control) {
+      control.addEventListener("click", close);
+    });
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && modal.classList.contains("is-open")) close();
+    });
+  }
+
+  /* ---------------------------------------------------------
      HERO — magnetic letters + intro reveal
   --------------------------------------------------------- */
   var heroLetters = [];
@@ -298,6 +338,7 @@
     setupCursor();
     setupNav();
     setupCertificationCards();
+    setupResumeModal();
     setupHeroMagnet();
     setupScrollReveals();
     runPreloader();
