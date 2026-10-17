@@ -16,9 +16,17 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
 <link rel="stylesheet" href="css/styles.css" />
-<noscript><style>.cursor{display:none!important;}</style></noscript>
+<noscript><style>.preloader,.cursor{display:none!important;}</style></noscript>
 </head>
 <body>
+
+<!-- ===================== PRELOADER ===================== -->
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="preloader__word">
+    <span>A</span><span>M</span><span>A</span><span>N</span>
+  </div>
+  <div class="preloader__bar"><span></span></div>
+</div>
 
 <!-- ===================== CUSTOM CURSOR ===================== -->
 <div class="cursor" id="cursor" aria-hidden="true">
