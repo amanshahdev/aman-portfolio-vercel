@@ -527,15 +527,15 @@ button{ font-family:inherit; background:none; border:0; color:inherit; cursor:po
 /* =========================== RESUME PREVIEW =========================== */
 .resume-modal{
   position:fixed; inset:0; z-index:950; display:grid; place-items:center;
-  padding:clamp(1rem,3vw,3rem); visibility:hidden; opacity:0;
+  padding:0; visibility:hidden; opacity:0;
   transition:opacity .35s var(--ease), visibility .35s;
 }
 .resume-modal.is-open{ visibility:visible; opacity:1; }
 .resume-modal__backdrop{ position:absolute; inset:0; background:rgba(10,10,11,.88); backdrop-filter:blur(1rem); }
 .resume-modal__dialog{
-  position:relative; display:flex; flex-direction:column; width:min(90rem,100%);
-  max-height:min(92vh,62rem); background:#171719; border:1px solid rgba(243,238,227,.2);
-  box-shadow:1rem 1rem 0 var(--orange); transform:translateY(1.25rem);
+  position:relative; display:flex; flex-direction:column; width:100%; height:100dvh;
+  max-height:none; background:#171719; border:0;
+  box-shadow:none; transform:translateY(1.25rem);
   transition:transform .45s var(--ease); overflow:hidden;
 }
 .resume-modal.is-open .resume-modal__dialog{ transform:translateY(0); }
