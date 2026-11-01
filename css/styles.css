@@ -820,6 +820,13 @@ button{ font-family:inherit; background:none; border:0; color:inherit; cursor:po
   .skills__grid{
     gap:2rem 2.5rem;
   }
+  .skill-card{
+    grid-template-columns:1fr;
+    gap:.75rem;
+  }
+  .skill-card h3{
+    padding-bottom:.25rem;
+  }
   .certifications__grid{ grid-template-columns:repeat(2,minmax(0,1fr)); }
   .certifications__head{ align-items:flex-start; flex-wrap:wrap; }
 }
@@ -912,4 +919,123 @@ button{ font-family:inherit; background:none; border:0; color:inherit; cursor:po
   .resume-sheet__contactbar{ font-size:.72rem; }
   .resume-skills--detailed p{ font-size:.82rem; }
   .resume-project p:not(.resume-project__stack){ font-size:.82rem; }
+}
+
+/* =========================== NARROW VIEWPORT SAFEGUARDS =========================== */
+@media (max-width:560px){
+  .nav{
+    padding-inline:1rem;
+  }
+  .nav__mark{
+    font-size:1.1rem;
+  }
+  .nav__menu{
+    padding-inline:1rem;
+  }
+  .nav__menu a{
+    max-width:100%;
+    font-size:clamp(1.3rem,7.2vw,2.4rem);
+  }
+  .hero{
+    padding-inline:1rem;
+  }
+  .hero__title{
+    font-size:clamp(2.45rem,15.5vw,4.7rem);
+  }
+  .hero__meta{
+    width:100%;
+    gap:1rem;
+    justify-content:space-between;
+  }
+  .hero__resume{
+    white-space:normal;
+    text-align:right;
+  }
+  .intro,
+  .experience,
+  .about,
+  .skills,
+  .work,
+  .certifications,
+  .contact{
+    padding-inline:1rem;
+  }
+  .section-title{
+    font-size:clamp(1.8rem,9vw,2.8rem);
+  }
+  .skill-card{
+    padding-inline:.875rem;
+  }
+  .skill-card ul{
+    column-gap:.75rem;
+  }
+  .skill-card li{
+    font-size:.8rem;
+    overflow-wrap:anywhere;
+  }
+  .skill-icon{
+    width:.9rem;
+    height:.9rem;
+    flex-basis:.9rem;
+  }
+  .certification-card__logo{
+    height:10rem;
+  }
+  .contact__email{
+    line-height:1.4;
+  }
+  .footer__row{
+    justify-content:flex-start;
+  }
+  .resume-modal__header{
+    padding-inline:1rem;
+  }
+  .resume-sheet{
+    margin:.5rem;
+    padding:.9rem;
+  }
+  .resume-sheet__masthead h1{
+    font-size:clamp(2.35rem,15vw,4.5rem);
+  }
+  .resume-sheet__contactbar{
+    overflow-wrap:anywhere;
+  }
+  .resume-entry__top{
+    display:block;
+  }
+  .resume-entry__top span{
+    display:block;
+    margin-top:.3rem;
+  }
+}
+
+@media (max-width:380px){
+  .hero__title{
+    font-size:clamp(2.2rem,14.5vw,3.8rem);
+  }
+  .hero__meta{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+  .hero__resume{
+    text-align:left;
+  }
+  .skill-card ul{
+    grid-template-columns:1fr;
+  }
+  .project__facts{
+    display:grid;
+    grid-template-columns:1fr;
+  }
+  .project__facts li{
+    width:max-content;
+    max-width:100%;
+  }
+  .resume-modal__actions{
+    width:100%;
+  }
+  .resume-modal__download{
+    max-width:100%;
+    overflow-wrap:anywhere;
+  }
 }
