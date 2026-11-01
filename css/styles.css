@@ -235,6 +235,16 @@ button{ font-family:inherit; background:none; border:0; color:inherit; cursor:po
 }
 @keyframes scroll-x{ from{ transform:translateX(0);} to{ transform:translateX(-50%);} }
 
+/* =========================== MOTION DETAILS =========================== */
+.hero__eyebrow span{
+  display:inline-block;
+  animation:accent-pulse 2.4s ease-in-out infinite;
+}
+@keyframes accent-pulse{
+  0%,100%{ opacity:.55; transform:translateX(0); }
+  50%{ opacity:1; transform:translateX(.2rem); }
+}
+
 /* =========================== INTRO STRIP =========================== */
 .intro{
   padding:min(6vw,4.5rem) clamp(1.25rem,4vw,3rem);
@@ -399,6 +409,13 @@ button{ font-family:inherit; background:none; border:0; color:inherit; cursor:po
   background:rgba(243,238,227,.035);
   box-shadow:.35rem .35rem 0 rgba(243,238,227,.08);
   display:grid; grid-template-columns:minmax(8rem,.7fr) 1fr; gap:1rem;
+  transition:transform .45s var(--ease), border-color .35s ease, box-shadow .45s var(--ease);
+  will-change:transform;
+}
+.skill-card:hover,.skill-card:focus-within{
+  transform:translateY(-.35rem);
+  border-color:rgba(216,255,62,.6);
+  box-shadow:.6rem .6rem 0 rgba(216,255,62,.14);
 }
 .skill-card::before{
   content:""; position:absolute; top:0; left:0; width:.25rem; height:100%;
@@ -451,10 +468,10 @@ button{ font-family:inherit; background:none; border:0; color:inherit; cursor:po
 .certification-card{
   display:flex; flex-direction:column; min-width:0;
   border:1px solid rgba(243,238,227,.18); background:rgba(10,10,11,.5);
-  transition:border-color .2s ease, transform .2s ease;
+  transition:border-color .35s ease, transform .35s var(--ease), box-shadow .35s var(--ease);
 }
 .certification-card:focus-visible{ outline:2px solid var(--lime); outline-offset:.25rem; }
-.certification-card:hover{ border-color:var(--lime); transform:translateY(-.25rem); }
+.certification-card:hover{ border-color:var(--lime); transform:translateY(-.35rem) rotate(-.35deg); box-shadow:.45rem .45rem 0 rgba(216,255,62,.12); }
 .certification-card__logo{
   display:flex; align-items:center; justify-content:center; height:11rem;
   padding:1.25rem; background:var(--bone);
@@ -857,6 +874,7 @@ button{ font-family:inherit; background:none; border:0; color:inherit; cursor:po
 @media (prefers-reduced-motion: reduce){
   html{ scroll-behavior:auto; }
   *{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; }
+  .skill-card:hover,.skill-card:focus-within,.certification-card:hover{ transform:none; }
 }
 
 /* =========================== SELECTION =========================== */

@@ -290,8 +290,18 @@
      SCROLL REVEALS — projects, about, contact
   --------------------------------------------------------- */
   function setupScrollReveals() {
+    var revealTargets = ".skills__head, .skill-card, .certifications__head, .certification-card, .about__visual";
+
+    if (reduceMotion) {
+      document.querySelectorAll(".project__art, .project__body, " + revealTargets).forEach(function (el) {
+        el.style.opacity = 1;
+        el.style.transform = "none";
+      });
+      return;
+    }
+
     if (!hasGSAP || !window.ScrollTrigger) {
-      document.querySelectorAll(".project__art, .project__body").forEach(function (el) {
+      document.querySelectorAll(".project__art, .project__body, " + revealTargets).forEach(function (el) {
         el.style.opacity = 1; el.style.transform = "none";
       });
       return;
@@ -321,6 +331,36 @@
     gsap.from(".about__lede, .about__body, .about__block", {
       opacity: 0, y: 24, duration: 0.8, ease: "power2.out", stagger: 0.08,
       scrollTrigger: { trigger: ".about", start: "top 70%" }
+    });
+
+    gsap.from(".about__visual", {
+      opacity: 0, x: 32, rotate: 3, duration: 1, ease: "power3.out",
+      scrollTrigger: { trigger: ".about", start: "top 70%" }
+    });
+
+    gsap.from(".skills__head", {
+      opacity: 0, y: 22, duration: 0.8, ease: "power2.out",
+      scrollTrigger: { trigger: ".skills__head", start: "top 78%" }
+    });
+
+    gsap.from(".certifications__head", {
+      opacity: 0, y: 22, duration: 0.8, ease: "power2.out",
+      scrollTrigger: { trigger: ".certifications__head", start: "top 78%" }
+    });
+
+    gsap.from(".skill-card", {
+      opacity: 0, y: 34, duration: 0.8, ease: "power3.out", stagger: 0.1,
+      scrollTrigger: { trigger: ".skills__grid", start: "top 78%" }
+    });
+
+    gsap.from(".certification-card", {
+      opacity: 0, y: 28, duration: 0.7, ease: "power3.out", stagger: 0.08,
+      scrollTrigger: { trigger: ".certifications__grid", start: "top 78%" }
+    });
+
+    gsap.to(".hero__grain", {
+      yPercent: 12, ease: "none",
+      scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true }
     });
 
     gsap.from(".contact__statement, .contact__email, .contact__links", {
